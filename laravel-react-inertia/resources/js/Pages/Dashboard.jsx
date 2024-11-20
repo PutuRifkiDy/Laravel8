@@ -18,6 +18,7 @@ export default function Dashboard() {
                         <div className="p-6 text-gray-900">
                             You're logged in!
                         </div>
+                        <a href="/about">Go to About</a>
                     </div>
                 </div>
             </div>
