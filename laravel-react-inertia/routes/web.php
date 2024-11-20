@@ -30,7 +30,9 @@ Route::middleware('auth')->group(function () {
 // routes untuk tampilan fe
 Route::get('/about', function () {
     return Inertia::render('About', [
-        'title' => 'About Us'
+        'title' => 'About Us',
+        'nama' => 'Putu Rifki Dirkayuda',
+        'gambar' => '/images/logo-toko-kita.jpg'
     ]);
 });
 Route::get('/blog', function () {
