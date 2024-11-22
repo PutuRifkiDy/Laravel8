@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\PostController;
+use \App\Models\Post;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -35,20 +38,19 @@ Route::get('/about', function () {
         'gambar' => '/images/logo-toko-kita.jpg'
     ]);
 });
-Route::get('/blog', function () {
-    return Inertia::render('Blog', [
-        'title' => 'Blog'
-    ]);
-});
+// Route::get('/blog', function () {
+//     return Inertia::render('Blog', [
+//         'title' => 'Blog'
+//     ]);
+// });
+
+Route::get('blog/{slug}', [PostController::class, 'show']);
+
 Route::get('/contact', function(){
     return Inertia::render('Contact', [
-        'title'=> 'Contact'
+        'title'=> 'Contact' 
     ]);
 });
-// Route::get('/blog', function() {
-//     return Inertia::render('Blog', [
-//         'title'=> 'Blog'
-//     ]);
-// })
+Route::get('/blog', [PostController::class, 'index']);
 
 require __DIR__.'/auth.php';
