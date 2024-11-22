@@ -15,7 +15,7 @@ const Blog = ({ heading, description, blog }) => {
                                 <a href={`blog/${post.slug}`}>
                                     <h1 className="text-blue-700">{post.title}</h1>
                                 </a>
-                                <p>{post.description}</p>
+                                <p>{post.excerpt}</p>
                             </div>
                         ))
                     }
@@ -24,12 +24,12 @@ const Blog = ({ heading, description, blog }) => {
             </div>
 
             {/* double page */}
-            <div className="px-24 flex flex-col justify-center items-center">
+            {/* <div className="px-24 flex flex-col justify-center items-center">
                 <div className="flex flex-col justify-center items-center">
                     <h1>{blog.heading}</h1>
                     <h4>{blog.description}</h4>
                 </div>
-            </div>
+            </div> */}
         </EndUserLayout>
     );
 }

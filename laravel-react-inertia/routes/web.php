@@ -44,13 +44,14 @@ Route::get('/about', function () {
 //     ]);
 // });
 
-Route::get('blog/{slug}', [PostController::class, 'show']);
 
 Route::get('/contact', function(){
     return Inertia::render('Contact', [
         'title'=> 'Contact' 
     ]);
 });
+
+Route::get('blog/{post:slug}', [PostController::class, 'show']);
 Route::get('/blog', [PostController::class, 'index']);
 
 require __DIR__.'/auth.php';

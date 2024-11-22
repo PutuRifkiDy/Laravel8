@@ -11,17 +11,16 @@ class PostController extends Controller
     public function index()
     {
         return Inertia::render('Blog', [
-            'blog'=> Post::getBlogPosts()
+            'blog'=> Post::all()
         ]);
     }
 
-    public function show($slug)
+    public function show(Post $post)
     {
-        $blogPost = Post::find($slug);
-
+    
         return Inertia::render('BlogDetail', [
             'heading' => "Single Post",
-            'blog' => $blogPost
+            'blog' => $post
         ]);
     }
 }

@@ -73,17 +73,17 @@ const Navbar = (auth, canLogin, canRegister, title) => {
                                     </a>
                                     <a
                                         href="/about"
-                                        className={`rounded-md px-3 py-2 text-sm font-medium text-white ${ url === "/about" ? "bg-gray-700" : ""}`}                                    >
+                                        className={`rounded-md px-3 py-2 text-sm font-medium text-white ${ url === "/about" ? "bg-gray-700" : ""}`}>
                                         About
                                     </a>
                                     <a
                                         href="/blog"
-                                        className={`rounded-md px-3 py-2 text-sm font-medium text-white ${ url === "/blog" || url === "/blog/blog-pertama" || url === "/blog/blog-kedua" ? "bg-gray-700" : ""}`}                                        >
+                                        className={`rounded-md px-3 py-2 text-sm font-medium text-white ${ window.location.pathname.startsWith("/blog") ? "bg-gray-700" : ""}`} >
                                         Blog
                                     </a>
                                     <a
                                         href="/contact"
-                                        className={`rounded-md px-3 py-2 text-sm font-medium text-white ${ url === "/contact" ? "bg-gray-700" : ""}`}                                        >
+                                        className={`rounded-md px-3 py-2 text-sm font-medium text-white ${ url === "/contact" ? "bg-gray-700" : ""}`}>
                                         Contact
                                     </a>
                                 </div>
