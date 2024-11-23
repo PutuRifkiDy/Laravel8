@@ -3,16 +3,16 @@ import { Head } from "@inertiajs/react";
 import Navbar from "@/Components/Navbar";
 import EndUserLayout from "@/Layouts/EndUserLayout";
 
-const Blog = ({ heading, description, blog }) => {
+const Blog = ({ heading, description, posts, title }) => {
     return(
         <EndUserLayout>
             <div className="flex justify-center items-center">
                 <Head title={heading}/>
                 <div className="px-24 py-24 flex flex-col justify-center">
-                    <a href="/categories">Lihat Kategori</a>
                     {
-                        blog.map((post, index) => ( 
+                        posts.map((post, index) => ( 
                             <div className="mb-8" key={index}>
+                                <h1>Kategori : {title}</h1>
                                 <a href={`blog/${post.slug}`}>
                                     <h1 className="text-blue-700">{post.title}</h1>
                                 </a>

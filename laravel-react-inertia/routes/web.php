@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Category;
 
 
 Route::get('/', function () {
@@ -53,5 +54,18 @@ Route::get('/contact', function(){
 
 Route::get('blog/{post:slug}', [PostController::class, 'show']);
 Route::get('/blog', [PostController::class, 'index']);
+Route::get('/categories/{category:slug}',  function(Category $category){
+    return Inertia::render('Category', [
+        'title' => $category->name,
+        'posts' => $category->posts,
+        'category' => $category->name
+    ]);
+});
+Route::get('/categories',  function(Category $category){
+    return Inertia::render('Categories', [
+        'title' => "Post Categories",
+        'posts' => Category::all(),
+    ]);
+});
 
 require __DIR__.'/auth.php';

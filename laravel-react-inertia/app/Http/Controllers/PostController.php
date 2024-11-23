@@ -17,6 +17,7 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        $post->load('category');
     
         return Inertia::render('BlogDetail', [
             'heading' => "Single Post",
